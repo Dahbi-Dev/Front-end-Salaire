@@ -7,10 +7,10 @@ import axios from "axios";
 
 
 function App() {
-  const url =  "https://back-end-salaire-3.onrender.com"
+  const url = "https://back-end-salaire-3.onrender.com"
   const [data, setData] = useState([]);
 
- 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,10 +29,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />}/>
-            <Route path="salaire" element={<Salaire data={data} />} />
-            <Route path="search" element={<Composant3 data={data} />} />
-          
+          <Route index element={<Home />} />
+          <Route path="salaire" element={<Salaire data={data} />} />
+          <Route path="search" element={<Composant3 data={data} />} />
+
         </Routes>
       </BrowserRouter>
     </div>
