@@ -10,16 +10,20 @@ function App() {
   const url =  "https://back-end-salaire-3.onrender.com"
   const [data, setData] = useState([]);
 
-  useEffect  ( async() => { 
-    axios
-      .get(`${url}/salaries`)
-      .then(  (response) => {await
-      setData(response.data);
-      })
-      .catch((error) => {
+ 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${url}/salaries`);
+        setData(response.data);
+      } catch (error) {
         console.error("Error Fetching Data:", error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
+
 
   return (
     <div className="App">
