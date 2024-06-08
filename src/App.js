@@ -10,11 +10,11 @@ function App() {
   const url =  "https://back-end-salaire-3.onrender.com"
   const [data, setData] = useState([]);
 
-  useEffect(() => { 
+  useEffect  ( async() => { 
     axios
       .get(`${url}/salaries`)
-      .then((response) => {
-        setData(response.data);
+      .then(  (response) => {await
+      setData(response.data);
       })
       .catch((error) => {
         console.error("Error Fetching Data:", error);
